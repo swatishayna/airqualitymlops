@@ -9,9 +9,16 @@ pip install -r requirements.txt
 5. Create a data_given folder and put data file there
 6. Make a repo on Github and keep on pushing the code wherever required
 ``` 
-git init
-dvc init
-dvc add data_given/data_file
+-----git init
+-----dvc init
+-----dvc add data_given/data_file
+-----git add . && git commit -m "firs
+t commit" 
+-----git branch -M main
+-----git remote add origin https://gi
+thub.com/swatishayna/airqualitymlops.git
+-----git push origin main
+
 ```
 
    
