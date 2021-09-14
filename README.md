@@ -27,7 +27,7 @@ git push origin main
 dvc repro
 ```
 
- # This will generate dvc.lock file
+ - This will generate dvc.lock file
 
 10. Stage3:Perform train test split: Create a file in src folder and add this stage in dvc.yaml
 11. Stage4: Train and Evaluate Model: Create a file in src folder and add this stage in dvc.yaml
