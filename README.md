@@ -35,6 +35,32 @@ dvc repro
     ```
     dvc repro
     dvc metrics show
-    dvc metrics diff 
+    dvc metrics diff```
+     
 
+    
+13. Make tox.ini file which will generate virtualenv and test ommand line tool
+```
+https://tox.readthedocs.io/en/latest/index.html
+
+```
+14. tox commands
+```
+tox
+```
+for rebuilding
+```
+tox -r
+```
+15. pytest commands
+```
+pytest-v
+```
+16. setup commands
+```
+pip install -e .
+```
+17. build package commands
+```
+python setup.py sdist bdist_wheel
 ```
