@@ -9,15 +9,15 @@ pip install -r requirements.txt
 5. Create a data_given folder and put data file there
 6. Make a repo on Github and keep on pushing the code wherever required
 ``` 
------git init
------dvc init
------dvc add data_given/data_file
------git add . && git commit -m "firs
+git init
+dvc init
+dvc add data_given/data_file
+git add . && git commit -m "firs
 t commit" 
------git branch -M main
------git remote add origin https://gi
+git branch -M main
+git remote add origin https://gi
 thub.com/swatishayna/airqualitymlops.git
------git push origin main
+git push origin main
 
 ```
 7. Stage1: Get the data: create afile inside src directory to get the data from data_given folder and add this stage in dvc.yaml
@@ -26,9 +26,9 @@ thub.com/swatishayna/airqualitymlops.git
 ```
 dvc repro
 ```
-```
+
  # This will generate dvc.lock file
-```
+
 10. Stage3:Perform train test split: Create a file in src folder and add this stage in dvc.yaml
 11. Stage4: Train and Evaluate Model: Create a file in src folder and add this stage in dvc.yaml
 12.Create directory report and add two files params.json and scores.json
