@@ -6,7 +6,7 @@ import os
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from sklearn.model_selection import train_test_split
+
 from sklearn.linear_model import ElasticNet
 from get_data import read_params
 import argparse
@@ -57,8 +57,6 @@ def train_and_evaluate(config_path):
     print("  MAE: %s" % mae)
     print("  R2: %s" % r2)
 
-
-
     scores_file = config["reports"]["scores"]
     params_file = config["reports"]["params"]
 
@@ -76,8 +74,6 @@ def train_and_evaluate(config_path):
             "l1_ratio": l1_ratio,
         }
         json.dump(params, f, indent=4)
-
-
 
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "model.joblib")
