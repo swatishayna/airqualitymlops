@@ -11,3 +11,4 @@ flake8
 sklearn
 pytest
 tox
+gunicorn
