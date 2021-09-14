@@ -4,3 +4,5 @@ pandas
 flask
 flake8
 sklearn
+pytest
+tox
