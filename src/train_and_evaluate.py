@@ -2,8 +2,7 @@
 # train algo
 # save the performance metrices, param
 
-import os
-import warnings
+
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -11,9 +10,6 @@ import mlflow
 from sklearn.linear_model import ElasticNet
 from get_data import read_params
 import argparse
-import joblib
-import json
-import sys
 from urllib.parse import urlparse
 
 
@@ -44,7 +40,7 @@ def train_and_evaluate(config_path):
 
     train_x = train.drop(target, axis=1)
     test_x = test.drop(target, axis=1)
-                # MLFLOW
+# MLFLOW
     mlflow_config = config["mlflow_config"]
     remote_server_uri = mlflow_config["remote_server_uri"]
 
@@ -68,16 +64,16 @@ def train_and_evaluate(config_path):
         mlflow.log_metric("mae", mae)
         mlflow.log_metric("r2",r2)
 
-
-
         tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
         if tracking_url_type_store!= 'file':
             mlflow.sklearn.log_model(lr, "model", registered_model_name=mlflow_config["registered_model_name"])
         else:
             mlflow.sklearn.load_model(lr, "model")
 
+
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", default="params.yaml")
     parsed_args = args.parse_args()
     train_and_evaluate(config_path=parsed_args.config)
+

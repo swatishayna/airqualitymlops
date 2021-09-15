@@ -1,9 +1,8 @@
-import yaml
-import numpy as np
+
 from flask import Flask, render_template, request, jsonify
 import os
 from prediction_service import prediction
-import joblib
+
 
 params_path = "params.yaml"
 webapp_root = "webapp"
