@@ -28,6 +28,7 @@ def read_params(config_path):
         config = yaml.safe_load(yaml_file)
     return config
 
+
 def predict(data):
     config = read_params(params_path)
     model_dir_path = config["webapp_model_dir"]
