@@ -64,3 +64,8 @@ pip install -e .
 ```
 python setup.py sdist bdist_wheel
 ```
+18. create artifacts directory
+mlflow server command -
+```
+mlflow server    --backend-store-uri sqlite:///mlflow.db   --default-artifact-root ./artifacts   --host localhost -p 1234
+```
